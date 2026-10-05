@@ -1,0 +1,21 @@
+Train Opt Skills contains original project code, skill instructions, and a
+user-provided training optimization guide. The MIT license covers original
+project material; it does not relicense external linked articles, documentation,
+models, datasets, or trademarks.
+
+Project organization was informed by anthropics/skills, obra/superpowers,
+vercel-labs/agent-skills, K-Dense-AI/scientific-agent-skills, and the Agent Skills
+specification. No source implementations from those projects are bundled.
+See docs/design-references.md for links and details.
+
+The supplied Chinese guide is preserved in docs/
+training_performance_optimization_guide_zh_v2.md with its own source list.
+Its original case-study source is https://juejin.cn/post/7676104122035847231 .
+The supplemental user text is described by the guide but is not redistributed
+as a raw attachment. Reported case-study gains are not project benchmarks.
+This project has no affiliation with the referenced organizations.
+
+
+Domain workflow references additionally include NVIDIA/skills, meta-pytorch/skills,
+AMD-AGI/Primus and NVIDIA/TensorRT-LLM. Integration metadata links to a reviewed
+Meta PyTorch commit; no third-party skill source is redistributed.

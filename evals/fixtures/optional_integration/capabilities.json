@@ -1,0 +1,6 @@
+{
+  "gpu_available": false,
+  "optional_specialists": [],
+  "network_available": false,
+  "sampling_contract": "exactly_once_per_epoch"
+}

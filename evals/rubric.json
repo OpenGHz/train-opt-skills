@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "scoring": "Response schema plus executable semantic checks in checkers.py. All checks must pass; no keyword grading.",
+  "cases": {
+    "async_timing": {
+      "checker": "checkers.py",
+      "critical": "Missing response or failed artifact checks fail the case."
+    },
+    "duplicate_shards": {
+      "checker": "checkers.py",
+      "critical": "Missing response or failed artifact checks fail the case."
+    },
+    "augmentation_stats": {
+      "checker": "checkers.py",
+      "critical": "Missing response or failed artifact checks fail the case."
+    },
+    "weight_reorder": {
+      "checker": "checkers.py",
+      "critical": "Missing response or failed artifact checks fail the case."
+    },
+    "protocol_change": {
+      "checker": "checkers.py",
+      "critical": "Missing response or failed artifact checks fail the case."
+    },
+    "optional_integration": {
+      "checker": "checkers.py",
+      "critical": "Missing response or failed artifact checks fail the case."
+    }
+  }
+}

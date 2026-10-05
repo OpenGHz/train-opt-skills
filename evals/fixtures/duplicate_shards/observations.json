@@ -1,0 +1,26 @@
+{
+  "expected_ids": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "actual": [
+    {
+      "rank": 0,
+      "worker": 0,
+      "ids": [
+        "a",
+        "c"
+      ]
+    },
+    {
+      "rank": 1,
+      "worker": 0,
+      "ids": [
+        "a",
+        "c"
+      ]
+    }
+  ]
+}

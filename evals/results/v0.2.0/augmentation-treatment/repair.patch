@@ -1,0 +1,20 @@
+--- pipeline.py
++++ pipeline.py
+@@ -2,7 +2,13 @@
+ 
+ 
+ def normalize(images):
+-    flat = [value for image in images for value in image]
+-    mean = sum(flat) / len(flat)
+-    variance = sum((value - mean) ** 2 for value in flat) / len(flat)
+-    return [[(value - mean) / math.sqrt(variance + 1e-5) for value in image] for image in images]
++    """Normalize each nonempty image using its own population statistics."""
++    normalized = []
++    for image in images:
++        if not image:
++            raise ValueError("cannot normalize an empty image")
++        mean = sum(image) / len(image)
++        variance = sum((value - mean) ** 2 for value in image) / len(image)
++        denominator = math.sqrt(variance + 1e-5)
++        normalized.append([(value - mean) / denominator for value in image])
++    return normalized

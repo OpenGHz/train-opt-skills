@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "case_id": "augmentation_stats",
+  "status": "fixed",
+  "summary": "已将 pipeline.py normalize(images) 改为逐图计算总体均值和方差，保留 epsilon=1e-5、嵌套列表形状及原始输入；空批次返回 []，任意空图像抛出 ValueError。CPU 验证中，修复前 7 项检查有 5 项失败，修复后全部通过；28 组固定/可复现输入共 519 像素与独立 statistics 参考比较，最大绝对误差 2.220446049250313e-16（atol=rtol=1e-12）。批内添加、替换、重排图像及单图处理均验证精确独立性。这些证据仅支持确定性逐图统计语义修复，不建立随机增强等价性，也不代表 GPU 或生产训练验证。",
+  "unverified": [
+    "仅验证 CPU 确定性统计行为；这不能建立随机增强参数、抽样粒度或随机流等价性。",
+    "未验证 GPU、生产训练、下游损失/梯度/优化器更新或任务质量。",
+    "未进行吞吐量、延迟或内存基准；不声称性能加速。"
+  ],
+  "validation": {
+    "baseline_command": "python validate_normalize.py --phase baseline",
+    "baseline_exit_status": 1,
+    "baseline_artifact": "baseline_validation.json",
+    "candidate_command": "python validate_normalize.py --phase candidate",
+    "candidate_exit_status": 0,
+    "candidate_artifact": "candidate_validation.json",
+    "passed_checks": 7,
+    "pixels_compared": 519,
+    "reference_max_abs_error": 2.220446049250313e-16
+  }
+}

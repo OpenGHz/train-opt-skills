@@ -1,0 +1,1 @@
+Fix pipeline.py measure(step, synchronize, clock, steps, warmup). It must return elapsed seconds for completed measured work, exclude warmup, and avoid synchronizing every step. Keep the callable API. steps must be positive; warmup must be nonnegative; invalid windows raise ValueError. There is no GPU. Demonstrate useful CPU checks and state what remains unmeasured.

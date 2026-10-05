@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "case_id": "weight_reorder",
+  "variant": "baseline",
+  "scored_at": "2026-10-05T13:15:13.002775+00:00",
+  "response_status": "present",
+  "checks": [
+    {
+      "name": "manifest_inputs_match_harness",
+      "passed": true
+    },
+    {
+      "name": "immutable_inputs_preserved",
+      "passed": true
+    },
+    {
+      "name": "response_schema",
+      "passed": true
+    },
+    {
+      "name": "qkv_layout_and_projection",
+      "passed": true
+    },
+    {
+      "name": "malformed_layout_rejected",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Small deterministic CPU artifact checks; not scientific or production training acceptance."
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "measurement": {
+    "unit": "samples",
+    "scope": "training_update",
+    "warmup_excluded": true,
+    "synchronization": "device_synchronized_window",
+    "includes_data_loading": true,
+    "includes_validation": false,
+    "includes_checkpointing": false
+  },
+  "protocol": {
+    "workload_id": "toy-v1",
+    "dataset_id": "fixture-v1",
+    "model_id": "toy-mlp",
+    "precision": "fp32",
+    "global_batch_size": 32,
+    "world_size": 1,
+    "gradient_accumulation_steps": 1,
+    "input_shape": "32x128",
+    "hardware": "synthetic-cpu",
+    "software": "fixture-generator-v1",
+    "seed": 42
+  },
+  "runs": [
+    {
+      "elapsed_seconds": 1,
+      "effective_units": 1000,
+      "update_times_ms": [
+        10,
+        11,
+        9
+      ]
+    },
+    {
+      "elapsed_seconds": 1.1,
+      "effective_units": 1000,
+      "update_times_ms": [
+        10,
+        11,
+        9
+      ]
+    },
+    {
+      "elapsed_seconds": 1.2,
+      "effective_units": 1000,
+      "update_times_ms": [
+        10,
+        11,
+        9
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"epoch": 0, "rank": 0, "worker": 0, "sample_id": "a"}
+{"epoch": 0, "rank": 1, "worker": 0, "sample_id": "b"}
+{"epoch": 0, "rank": 0, "worker": 0, "sample_id": "c"}
+{"epoch": 0, "rank": 1, "worker": 0, "sample_id": "d"}
+{"epoch": 1, "rank": 0, "worker": 0, "sample_id": "a"}
+{"epoch": 1, "rank": 1, "worker": 0, "sample_id": "b"}
+{"epoch": 1, "rank": 0, "worker": 0, "sample_id": "c"}
+{"epoch": 1, "rank": 1, "worker": 0, "sample_id": "d"}

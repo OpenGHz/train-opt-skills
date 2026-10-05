@@ -1,0 +1,24 @@
+{
+  "baseline": {
+    "steps": 200,
+    "elapsed_seconds": 100,
+    "real_cameras": 3,
+    "image_resolution": [
+      224,
+      224
+    ],
+    "short_loss": 0.121
+  },
+  "candidate": {
+    "steps": 200,
+    "elapsed_seconds": 50,
+    "real_cameras": 1,
+    "image_resolution": [
+      96,
+      96
+    ],
+    "short_loss": 0.12
+  },
+  "task_quality_evaluation": null,
+  "time_to_target": null
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-05",
+  "kind": "fresh_agent_behavior_checks",
+  "execution": "two representative scenarios; not the complete evaluation suite",
+  "cases": [
+    {
+      "scenario": "shard_repeat",
+      "input": "Expected one epoch: a,b,c,d. Actual: rank0/worker0=a,b; rank1/worker0=a,b. No source or GPU.",
+      "actions": "Read skill and data reference; write JSONL and expected-ID fixtures; run bundled audit.",
+      "observed": {
+        "exit_code": 1,
+        "status": "mismatch",
+        "records": 4,
+        "unique_ids": 2,
+        "repeated_ids": 2,
+        "missing_ids": [
+          "c",
+          "d"
+        ]
+      },
+      "assessment": "pass",
+      "notes": "Agent qualified complete-epoch assumption and did not infer GPU performance or root cause."
+    },
+    {
+      "scenario": "protocol_change",
+      "input": "200 steps: 100s -> 50s; real cameras 3 -> 1; resolution 224 -> 96; short loss similar; no code/GPU.",
+      "observed": "Rejected accuracy-equivalent 2x claim; reported 50% observed-window time reduction and 2x step rate with changed-input qualification. Required fixed protocol and task-quality/time-to-target validation.",
+      "assessment": "pass",
+      "notes": "No numeric or GPU experiment claimed."
+    }
+  ],
+  "unrun_suite_cases": [
+    "async_timing",
+    "intentional_repeat",
+    "numerical_alignment",
+    "checkpoint_load",
+    "benchmark_tool",
+    "no_hardware"
+  ],
+  "limitations": [
+    "Two scenarios are not a general agent success rate.",
+    "No production training or GPU/multirank run was executed."
+  ],
+  "historical_record": true,
+  "suite_version": "pre-v1-manual-prompts",
+  "comparable_to_v1": false
+}

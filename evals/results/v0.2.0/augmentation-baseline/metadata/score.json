@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "case_id": "augmentation_stats",
+  "variant": "baseline",
+  "scored_at": "2026-10-05T13:15:13.060561+00:00",
+  "response_status": "present",
+  "checks": [
+    {
+      "name": "manifest_inputs_match_harness",
+      "passed": true
+    },
+    {
+      "name": "immutable_inputs_preserved",
+      "passed": true
+    },
+    {
+      "name": "response_schema",
+      "passed": true
+    },
+    {
+      "name": "per_image_reference_and_no_mutation",
+      "passed": true
+    },
+    {
+      "name": "batch_independence_and_empty_image",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Small deterministic CPU artifact checks; not scientific or production training acceptance."
+}

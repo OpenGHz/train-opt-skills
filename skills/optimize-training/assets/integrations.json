@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "registry_revision": "2026-10-05",
+  "policy": "Optional local discovery only. Pins document reviewed upstream SKILL.md content; they are not installers or runtime certification.",
+  "integrations": [
+    {
+      "name": "profile-model",
+      "purpose": "Inspect existing PyTorch profiler JSON/JSON.gz traces, including rank-specific traces.",
+      "upstream": {
+        "repository": "https://github.com/meta-pytorch/skills",
+        "repository_commit": "15ea40020f7ab0ad6645f78dca3b5634383e93c9",
+        "path": "skills/profile-model/SKILL.md",
+        "url": "https://github.com/meta-pytorch/skills/blob/15ea40020f7ab0ad6645f78dca3b5634383e93c9/skills/profile-model/SKILL.md",
+        "git_blob_sha": "90d23728cc46c4f8f3812bea8ddb35ca46646d2f",
+        "skill_sha256": "059f3af51597ea9e1b3525310bcf3ff5685a0b9316fc2cf6718883d7b9136bbf",
+        "verification": "Fetched exact UTF-8 content at this commit; SHA-256 computed and Git blob SHA independently confirmed. Not executed."
+      },
+      "dependencies": [
+        {"distribution": "pandas", "requirement": "required_for_upstream_dataframe_workflow", "note": "A basic JSON inspection can use the standard library; the reviewed DataFrame instructions use pandas."},
+        {"distribution": "HolisticTraceAnalysis", "requirement": "optional_for_deep_trace_analysis", "note": "Metadata presence does not verify HTA import or trace-version compatibility."}
+      ],
+      "artifact_requirements": ["Readable trace JSON/JSON.gz with event timestamps, units, measurement window and rank identity", "Trusted matching environment only if new traces must be captured"],
+      "local_helpers": []
+    },
+    {
+      "name": "debug-graph-breaks",
+      "purpose": "Diagnose graph-break logs and propose or test bounded compile fixes.",
+      "upstream": {
+        "repository": "https://github.com/meta-pytorch/skills",
+        "repository_commit": "15ea40020f7ab0ad6645f78dca3b5634383e93c9",
+        "path": "skills/debug-graph-breaks/SKILL.md",
+        "url": "https://github.com/meta-pytorch/skills/blob/15ea40020f7ab0ad6645f78dca3b5634383e93c9/skills/debug-graph-breaks/SKILL.md",
+        "git_blob_sha": "cd556ab5652de4ecde1182a39890b145deaa9067",
+        "skill_sha256": "c14e9bb7ebf502199685e3f46f2106a0d5f0002be71b50d30889273433045fcd",
+        "verification": "Fetched exact UTF-8 content at this commit; SHA-256 computed and Git blob SHA independently confirmed. Not executed."
+      },
+      "dependencies": [
+        {"distribution": "torch", "requirement": "required_for_reproduction_not_static_log_review", "note": "Check the actual training interpreter and installed API versions before running or applying upstream suggestions."}
+      ],
+      "artifact_requirements": ["User code and relevant graph-break log or tlparse report for static diagnosis", "Authorized command, dependencies, representative inputs and resource budget for reproduction"],
+      "local_helpers": []
+    },
+    {
+      "name": "analyze-memory-snapshot",
+      "purpose": "Inspect allocator state or compare two memory snapshots from compatible run phases.",
+      "upstream": {
+        "repository": "https://github.com/meta-pytorch/skills",
+        "repository_commit": "15ea40020f7ab0ad6645f78dca3b5634383e93c9",
+        "path": "skills/analyze-memory-snapshot/SKILL.md",
+        "url": "https://github.com/meta-pytorch/skills/blob/15ea40020f7ab0ad6645f78dca3b5634383e93c9/skills/analyze-memory-snapshot/SKILL.md",
+        "git_blob_sha": "131c8f1f68588276549b621d9e3a7bb81a57326b",
+        "skill_sha256": "5540dbfa3c1f617f344da9fd778cadca2c1167cccf210671bde6140f182b2e4a",
+        "verification": "Fetched exact UTF-8 content at this commit; SHA-256 computed and Git blob SHA independently confirmed. Not executed."
+      },
+      "dependencies": [
+        {"distribution": "torch", "requirement": "required_for_capture_not_existing_json_review", "note": "An existing JSON snapshot or reviewed local helper may be usable without a GPU or torch import."}
+      ],
+      "artifact_requirements": ["Existing JSON snapshot with allocator state; history is needed for timeline claims", "Trusted runtime and version-compatible CUDA memory APIs for capture", "Do not unpickle an untrusted file merely because it was supplied or exists in a workspace"],
+      "local_helpers": [
+        {"path": "scripts/analyze_snapshot.py", "requirement": "optional", "note": "Read and inspect the installed helper and its imports before separately authorized execution; it is not bundled or executed here."}
+      ]
+    },
+    {
+      "name": "nsight-systems",
+      "purpose": "Optional locally installed NVIDIA Nsight Systems skill pack.",
+      "upstream": {
+        "repository_commit": null,
+        "skill_sha256": null,
+        "url": "https://docs.nvidia.com/nsight-systems/AnalysisGuide/index.html",
+        "verification": "Local product integration only; no upstream SKILL.md content or product version pin asserted."
+      },
+      "dependencies": [],
+      "executables": ["nsys"],
+      "artifact_requirements": ["Explicit local path to a product installation containing skills/nsight-systems/SKILL.md", "Installed version and full skill instructions must be checked before use", "Compatible trace artifact or authorized capture command and resource budget"],
+      "local_helpers": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "command": "python verify_conversion.py",
+  "device": "CPU",
+  "dtype": "float64",
+  "atol": 0.0,
+  "rtol": 0.0,
+  "projection_cases": 13,
+  "invalid_layout_cases": 19,
+  "max_absolute_error": 0.0,
+  "all_values_finite": true,
+  "input_preserved_and_output_rows_independent": true,
+  "converter_sha256": "1ab1c7f634af5cbd28e441ab931799767060af1bcc4755e397637a22d7395d34",
+  "fixture": "projection_fixture.json"
+}

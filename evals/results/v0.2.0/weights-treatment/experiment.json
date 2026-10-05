@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "experiment_id": "weight_reorder",
+  "status": "passed",
+  "track": "correctness_repair",
+  "objective": "Preserve projection semantics while reordering interleaved Q/K/V rows into component-major order",
+  "baseline": {
+    "revision": "27d13fab65db71004d12482f694cbb0fa422e781a0bfd7c901fc0d5c988a8afe",
+    "command": "python - (inline CPU baseline fixture check)",
+    "hardware": "CPU fixture; GPU availability not inspected",
+    "software_lock": {
+      "python": "3.12.14",
+      "numpy": "2.3.5"
+    },
+    "dataset": "Synthetic fixed projection_fixture.json",
+    "initial_weights": "projection_fixture.json"
+  },
+  "contract": {
+    "effective_work_unit": null,
+    "global_batch": null,
+    "precision_policy": "CPU float64, small exactly representable fixture values",
+    "allowed_changes": [
+      "Q/K/V row permutation and input layout validation"
+    ],
+    "tensor_tolerances": {
+      "projection": {
+        "atol": 0.0,
+        "rtol": 0.0
+      }
+    },
+    "quality_metric": null,
+    "quality_threshold": null,
+    "sampling_and_augmentation": null
+  },
+  "measurement": {
+    "warmup": null,
+    "window": "One bounded CPU verification run; no performance measurement",
+    "repeats": null,
+    "synchronization": null,
+    "job_boundary": null
+  },
+  "hypothesis": {
+    "evidence": [
+      "pipeline.py copies rows without reordering",
+      "baseline.json records a same-shape projection mismatch"
+    ],
+    "bottleneck": null,
+    "change": "Map target[component * num_heads + head] to source[3 * head + component]",
+    "predicted_effect": "Restore component-major projection output ordering"
+  },
+  "correctness": {
+    "inputs": "passed",
+    "forward": "passed",
+    "gradients": "not_run",
+    "optimizer_update": "not_run",
+    "shard_coverage": "not_run",
+    "checkpoint_resume": "not_run",
+    "task_quality": "not_run"
+  },
+  "results": {
+    "baseline_artifact": "baseline.json",
+    "candidate_artifact": "verification.json",
+    "comparison_artifact": {
+      "baseline_max_absolute_error": 52.0,
+      "candidate_max_absolute_error": 0.0
+    },
+    "memory": null,
+    "quality": null
+  },
+  "decision": "keep correctness repair; CPU projection acceptance only",
+  "rollback": "cp pipeline.before.py pipeline.py",
+  "limitations": [
+    "Validation covers synthetic CPU float64 projection fixtures only; no GPU or production-training validation was performed.",
+    "No complete model, gradients, optimizer update, task-quality, deployment runtime, or exact checkpoint-resume acceptance was tested.",
+    "Performance, throughput, training wall time, and memory were not measured."
+  ],
+  "executions": [
+    {
+      "command": "python verify_conversion.py",
+      "exit_status": 0,
+      "artifact": "verification.json",
+      "state": "passed"
+    }
+  ]
+}

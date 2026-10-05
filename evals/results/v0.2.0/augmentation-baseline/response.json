@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "case_id": "augmentation_stats",
+  "status": "fixed",
+  "summary": "Changed pipeline.py normalize(images) to compute each image's population mean and variance independently and apply (pixel - mean) / sqrt(variance + 1e-5). The function preserves nested list shape and input data, returns [] for an empty batch, and raises ValueError for any empty image. Added and ran validate_cpu.py: all 7 CPU tests passed, covering manually derived reference values, unrelated-image insertion and batch reordering, separate-image equivalence, shape and nonmutation, constant and singleton images, empty inputs, and 100 seeded finite-valued fixtures. This evidence supports the specified deterministic per-image normalization behavior on the tested CPU fixtures only.",
+  "unverified": [
+    "Stochastic augmentation equivalence was not tested or established by these deterministic statistics checks.",
+    "No GPU execution, performance benchmark, or production-training validation was performed.",
+    "Non-finite values, extreme floating-point overflow, and inputs outside batches of flat numeric lists were not validated."
+  ],
+  "validation": {
+    "command": "python validate_cpu.py",
+    "device": "CPU",
+    "tests_passed": 7,
+    "seeded_fixtures": 100
+  }
+}

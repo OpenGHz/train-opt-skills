@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "async_timing",
+      "fixture": "fixtures/async_timing",
+      "task_type": "code_repair"
+    },
+    {
+      "id": "duplicate_shards",
+      "fixture": "fixtures/duplicate_shards",
+      "task_type": "code_repair"
+    },
+    {
+      "id": "augmentation_stats",
+      "fixture": "fixtures/augmentation_stats",
+      "task_type": "code_repair"
+    },
+    {
+      "id": "weight_reorder",
+      "fixture": "fixtures/weight_reorder",
+      "task_type": "code_repair"
+    },
+    {
+      "id": "protocol_change",
+      "fixture": "fixtures/protocol_change",
+      "task_type": "evidence_assessment"
+    },
+    {
+      "id": "optional_integration",
+      "fixture": "fixtures/optional_integration",
+      "task_type": "evidence_assessment"
+    }
+  ]
+}

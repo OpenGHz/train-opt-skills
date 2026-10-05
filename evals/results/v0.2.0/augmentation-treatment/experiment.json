@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "experiment_id": "augmentation_stats",
+  "status": "passed",
+  "track": "correctness_repair",
+  "objective": "Restore independent per-image population normalization.",
+  "baseline": {
+    "revision": "3238930aba4ca4821399ba138103c48c4fc0fe9037a7a01d683fdabab74c892e",
+    "command": "python validate_normalize.py --phase baseline",
+    "hardware": "CPU; Linux-6.18.44-x86_64-with-glibc2.39",
+    "software_lock": {
+      "python": "3.12.14"
+    },
+    "dataset": "28 synthetic fixture batches serialized in both validation artifacts",
+    "initial_weights": null
+  },
+  "contract": {
+    "effective_work_unit": "image represented as a flat list",
+    "global_batch": null,
+    "precision_policy": "Python float arithmetic; finite small numeric CPU fixtures",
+    "allowed_changes": [
+      "Replace batch statistics with per-image statistics",
+      "Return [] for empty batch; raise ValueError for empty image"
+    ],
+    "tensor_tolerances": {
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "batch_independence": "exact equality"
+    },
+    "quality_metric": null,
+    "quality_threshold": null,
+    "sampling_and_augmentation": "Deterministic normalization only; no stochastic transform present"
+  },
+  "measurement": {
+    "warmup": null,
+    "window": "One bounded CPU correctness run per implementation; 28 fixture batches and 7 checks",
+    "repeats": null,
+    "synchronization": null,
+    "job_boundary": "normalize(images) only; no training or performance timing"
+  },
+  "hypothesis": {
+    "evidence": [
+      "Source pooled all batch pixels for mean and variance",
+      "baseline_validation.json: 5/7 correctness checks failed"
+    ],
+    "bottleneck": null,
+    "change": "Compute statistics within the per-image loop",
+    "predicted_effect": "Remove dependence on unrelated batch images"
+  },
+  "correctness": {
+    "inputs": "passed",
+    "forward": "passed",
+    "gradients": "not_applicable",
+    "optimizer_update": "not_applicable",
+    "shard_coverage": "not_applicable",
+    "checkpoint_resume": "not_applicable",
+    "task_quality": "not_run"
+  },
+  "results": {
+    "baseline_artifact": "baseline_validation.json",
+    "candidate_artifact": "candidate_validation.json",
+    "comparison_artifact": "response.json",
+    "memory": null,
+    "quality": null
+  },
+  "decision": "keep correctness repair",
+  "rollback": "patch -R pipeline.py < repair.patch",
+  "limitations": [
+    "仅验证 CPU 确定性统计行为；这不能建立随机增强参数、抽样粒度或随机流等价性。",
+    "未验证 GPU、生产训练、下游损失/梯度/优化器更新或任务质量。",
+    "未进行吞吐量、延迟或内存基准；不声称性能加速。"
+  ],
+  "execution": {
+    "baseline": {
+      "command": "python validate_normalize.py --phase baseline",
+      "exit_status": 1
+    },
+    "candidate": {
+      "command": "python validate_normalize.py --phase candidate",
+      "exit_status": 0,
+      "pipeline_sha256": "3f3355c9d2453becbbdfc7952108f71c16ac999bfe323cefc99a9297fc8d5b8b"
+    }
+  }
+}

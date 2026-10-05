@@ -1,0 +1,14 @@
+interface:
+  display_name: Training Optimization
+  short_description: Profile and optimize training with correctness checks
+  default_prompt: Use $optimize-training to diagnose this training pipeline and validate
+    one measured optimization.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

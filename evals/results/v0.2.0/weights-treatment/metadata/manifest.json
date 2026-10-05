@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "case_id": "weight_reorder",
+  "variant": "treatment",
+  "prepared_at": "2026-10-05T13:05:09.740500+00:00",
+  "immutable_inputs": {
+    "TASK.md": "cbf7adb2d567b5e9531c986e2c000839cefdd424bb25f4c9c7ce02de236f45f0",
+    "response.schema.json": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+  },
+  "fixture_sha256": {
+    "pipeline.py": "27d13fab65db71004d12482f694cbb0fa422e781a0bfd7c901fc0d5c988a8afe",
+    "prompt.md": "81b4249904dcc39f384b7fb344b30ea1de02e65633e826996136e1692f2bce42"
+  },
+  "execution": "not_run",
+  "isolation": "fixture_copy_only; not an OS sandbox",
+  "skill_sha256": {
+    "LICENSE.txt": "08d456e74b287427e04445f28623d79d81d7a3c3284e39f9b943769bcd0f82c8",
+    "SKILL.md": "4e4d4c4b3202cd8d6e25822cb9e2648dffbb5b5cb4f427dd7e3b3167b64ba859",
+    "scripts/compare_tensors.py": "1ba683319a0120c6d33f59ff8b40f22d75421d38a9be1a1ce440ce8a0991c1b4",
+    "scripts/audit_sample_ids.py": "38ec8dcd6a42d964ae0072e1c8790c6ef9a9dd54d3273ca44a43ee49a313e5b8",
+    "scripts/_common.py": "5f4016d29be451abcdf98c2f3a1f6dbfc38cba28c33bc9c5cfd5c75a8fced2f6",
+    "scripts/collect_env.py": "7988b6e70ee7575a80c3e3e6e3bf5c64f3bbcd268fd3a6574420e061f4ef9977",
+    "scripts/compare_benchmarks.py": "920260d0ae6d1318db1d6ecb16ed8a491aec06f32977aaccecb77687ae6f9edb",
+    "scripts/discover_integrations.py": "4f04c79584b8b7103accdea14a96a9313fabaa85b68a6d587f348af96d473abe",
+    "references/data-pipeline.md": "8b81e3709f81c27769f7de067aa4a02b21731f08b62804b472cdf63cacf8ed9f",
+    "references/correctness.md": "5c00ccbb045708ae6e26d645961e76dd6631d496f7a598fbda9d13038a7fb22d",
+    "references/optimization-casebook.md": "bfcc8d7da3d928e40aaff36dc7ccb69ea1f443ec1eccfac5d5b35780ca6eea43",
+    "references/checkpoint-conversion.md": "7af5b181be9666e003981b4c74ee1b2db757e41dd359614a468b8aa6702558b0",
+    "references/compile-runtime.md": "e9b003986d57272af9d56e69d09097474dfd40f512e3f541335b0f3bbac67d85",
+    "references/profiling.md": "e2ae6f1dfa3591f55c5aeff8914dd620e8f8ed358afb26dc1047246635a0567d",
+    "references/distributed-memory.md": "105193e8dcea1bd33b806b56e1f8033a8db3037c659b696be88ac10d24cb8957",
+    "agents/openai.yaml": "f5f97a815b6dc88b8e06f9392ba9efee77080e36d1c81b1d9bee88928ee4922d",
+    "assets/integrations.json": "64c558cada9a1e9730bdc73a8f996929f7427e53a42245f9d85f6d4524482e32",
+    "assets/experiment.json": "8c3bf6b511d1b233e56a4bf7c0726c302bf7dde187d8fb687806405e3822c5c7",
+    "assets/icon.svg": "72343cc4b66256ae7de8474c7cad14e711ad84a94c473732a44f96a56124c42d",
+    "assets/report-template.md": "0a4f62b4aa91c07b6fe0ea8e35eb5a9ec15378c9b8db07cff6d7286292c0b4c3",
+    "assets/optimization-case.json": "78a37f02cc0ff329cea74a400de494410c10affdb60480da2cdce1de4e870815",
+    "references/cases/dataloader-supply.md": "3129df1cfd0511e28da6277d01b337e89ea7d0076e49f51e43180b519b0c4c50",
+    "references/cases/augmentation-batch-statistics.md": "b2d27141681203b0e4d515538d38e4c7387fedae10237e42d94c369784eebdc4",
+    "references/cases/shard-repair.md": "c1ca3fcb8b4449ddf9fd3c669b9e338c59e87b52c067d36a4fed23841e08a5f3",
+    "references/cases/compile-shapes.md": "a3908ed1d8f480afbbfa4add8dcf8631c059585eec1b4e9e72e6e4faab11ec38",
+    "references/cases/recompute-microbatch.md": "4dda65c4ee34196d708f5dcc66ec4982ea186ac7eaf1276cc57323fff115c9ec"
+  }
+}

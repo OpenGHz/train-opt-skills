@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "case_id": "weight_reorder",
+  "status": "fixed",
+  "summary": "Updated pipeline.py convert_qkv to copy rows from head-interleaved Q/K/V order into all-Q, all-K, all-V order using source index 3 * head + component. Added ValueError validation for invalid head counts, row counts, empty rows, malformed rows, and ragged layouts. Added test_pipeline.py and ran python -m unittest -v test_pipeline.py: all 3 tests passed. NumPy CPU projections for 1, 2, and 3 heads matched independently assembled component outputs with zero tolerance; the multi-head fixtures distinguish the old copy behavior from the required result. Tests also confirmed explicit row order, unchanged input, and independent returned row lists. This evidence supports the conversion behavior and validation on these CPU fixtures only.",
+  "unverified": [
+    "No GPU execution or production-training validation was performed.",
+    "No real-model checkpoint integration, deployment acceptance, or exact-resume acceptance was established."
+  ]
+}

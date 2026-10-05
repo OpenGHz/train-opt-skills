@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "case_id": "replace-with-id",
+  "title": null,
+  "maturity": "engineering_pattern",
+  "maturity_allowed_values": ["engineering_pattern", "synthetic_counterexample", "measured_case"],
+  "record_status": "planned",
+  "track": "system_optimization",
+  "provenance": {
+    "origin": "task-specific record",
+    "created_at": null,
+    "source_pattern": null,
+    "source_urls": [],
+    "source_access_dates": {},
+    "license_or_reuse_notes": null
+  },
+  "environment": {
+    "baseline_revision": null,
+    "candidate_revision": null,
+    "hardware_and_topology": null,
+    "software_lock_artifact": null,
+    "dataset_fingerprint": null,
+    "initial_state_fingerprint": null
+  },
+  "applicability": {
+    "observed_signals": [],
+    "counter_signals": [],
+    "bottleneck_evidence_artifacts": [],
+    "hypothesis": null,
+    "proposed_mechanism": null
+  },
+  "contract": {
+    "objective": null,
+    "invariants": {},
+    "declared_changes": [],
+    "effective_work_unit": null,
+    "required_checks": [],
+    "tolerances_and_quality_acceptance": {},
+    "sampling_and_tail_policy": null,
+    "actual_random_input_artifacts": []
+  },
+  "implementation": {
+    "commands": [],
+    "diff_artifact": null,
+    "interaction_experiments": [],
+    "rollback_command_or_configuration": null,
+    "rollback_checkpoint": null
+  },
+  "measurement": {
+    "scope": null,
+    "scope_allowed_values": ["analytic_only", "cpu_fixture", "microbenchmark", "gpu_window", "full_training_job"],
+    "warmup": null,
+    "window_and_job_boundaries": null,
+    "synchronization": null,
+    "repeated_run_artifacts": [],
+    "baseline_results": null,
+    "candidate_results": null,
+    "memory_results": null,
+    "startup_and_compilation_results": null,
+    "uncertainty_and_comparability": null
+  },
+  "checks": [
+    {
+      "name": "replace-with-required-check",
+      "required": true,
+      "status": "not_run",
+      "status_allowed_values": ["planned", "not_run", "passed", "failed", "not_applicable"],
+      "command": null,
+      "evidence_artifact": null,
+      "not_applicable_reason": null
+    }
+  ],
+  "task_quality": {
+    "status": "not_run",
+    "metric_and_protocol": null,
+    "evaluation_artifacts": [],
+    "conclusion": null
+  },
+  "decision": {
+    "outcome": "pending",
+    "outcome_allowed_values": ["pending", "keep", "revert", "inconclusive", "blocked"],
+    "reason": null,
+    "required_evidence_missing": [],
+    "limitations": [],
+    "next_resolving_experiment": null
+  },
+  "curation": {
+    "scope": "task_artifact_only",
+    "shared_publication_requested": false,
+    "notes": "This template does not authorize modifying a shared casebook or publishing task data."
+  }
+}

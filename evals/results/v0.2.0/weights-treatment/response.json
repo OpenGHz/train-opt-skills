@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "case_id": "weight_reorder",
+  "status": "fixed",
+  "summary": "Repaired pipeline.py convert_qkv to copy source row 3 * head + component into target row component * num_heads + head, yielding all Q heads, then all K heads, then all V heads. Added positive-integer head-count and rectangular nonempty-list layout validation, raising ValueError for invalid inputs. CPU NumPy float64 checks passed for 13 projection fixtures (maximum absolute error 0 with atol=rtol=0), 19 invalid layouts, input preservation, and independent output rows. The original same-shape implementation had maximum absolute projection error 52 on the fixed fixture. This evidence supports the tested row-conversion semantics only.",
+  "unverified": [
+    "Validation covers synthetic CPU float64 projection fixtures only; no GPU or production-training validation was performed.",
+    "No complete model, gradients, optimizer update, task-quality, deployment runtime, or exact checkpoint-resume acceptance was tested.",
+    "Performance, throughput, training wall time, and memory were not measured."
+  ],
+  "evidence": {
+    "command": "python verify_conversion.py",
+    "exit_status": 0,
+    "baseline": "baseline.json",
+    "verification": "verification.json",
+    "experiment": "experiment.json",
+    "fixture": "projection_fixture.json"
+  },
+  "rollback": "cp pipeline.before.py pipeline.py"
+}

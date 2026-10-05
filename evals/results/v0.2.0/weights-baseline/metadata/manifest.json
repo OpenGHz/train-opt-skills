@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "case_id": "weight_reorder",
+  "variant": "baseline",
+  "prepared_at": "2026-10-05T13:05:09.706316+00:00",
+  "immutable_inputs": {
+    "TASK.md": "862c32f37c34b678ef96ec3a2f4a55e41e611664cb50494db341d93672c35f87",
+    "response.schema.json": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+  },
+  "fixture_sha256": {
+    "pipeline.py": "27d13fab65db71004d12482f694cbb0fa422e781a0bfd7c901fc0d5c988a8afe",
+    "prompt.md": "81b4249904dcc39f384b7fb344b30ea1de02e65633e826996136e1692f2bce42"
+  },
+  "execution": "not_run",
+  "isolation": "fixture_copy_only; not an OS sandbox"
+}

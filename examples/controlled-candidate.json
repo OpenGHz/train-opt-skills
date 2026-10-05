@@ -1,0 +1,63 @@
+{
+  "schema_version": 2,
+  "synthetic": true,
+  "comparison": {
+    "track": "system_optimization",
+    "changed_execution_settings": [
+      "compile",
+      "num_workers"
+    ]
+  },
+  "measurement": {
+    "unit": "samples",
+    "scope": "training_update",
+    "warmup_excluded": true,
+    "synchronization": "device_synchronized_window",
+    "includes_data_loading": true,
+    "includes_validation": false,
+    "includes_checkpointing": false,
+    "window": "100 optimizer updates",
+    "warmup": "20 optimizer updates"
+  },
+  "invariants": {
+    "workload_id": "toy-v2",
+    "dataset_id": "fixture-v1",
+    "model_id": "toy-mlp",
+    "precision": "fp32; TF32 off",
+    "input_shape": "per sample: 128",
+    "loss": "mean squared error; mean over samples",
+    "optimizer": "SGD lr=0.01",
+    "sampling_and_augmentation": "fixed order; no augmentation",
+    "initial_weights": "fixture-init-v1",
+    "hardware": "synthetic-cpu",
+    "software": "fixture-generator-v1",
+    "global_batch_size": 32,
+    "views": 1,
+    "seed": 42
+  },
+  "execution": {
+    "microbatch_size": 32,
+    "gradient_accumulation_steps": 1,
+    "world_size": 1,
+    "data_parallel_size": 1,
+    "compile": "default",
+    "num_workers": 4
+  },
+  "provenance": {
+    "code_revision": "candidate-fixture"
+  },
+  "runs": [
+    {
+      "elapsed_seconds": 1.6,
+      "effective_units": 3200
+    },
+    {
+      "elapsed_seconds": 1.7,
+      "effective_units": 3200
+    },
+    {
+      "elapsed_seconds": 1.8,
+      "effective_units": 3200
+    }
+  ]
+}

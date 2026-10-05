@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "kind": "actual_fresh_agent_artifact_evaluation",
+  "release_evidence_label": "v0.2.0",
+  "execution_mode": "fresh_delegated_host_agent_sessions; manual prepare/score flow",
+  "model_id": null,
+  "model_id_reason": "Exact model identifier was not exposed to the recording agent.",
+  "runtime_execute_used": false,
+  "trials_per_case_per_variant": 1,
+  "cases_evaluated": [
+    "augmentation_stats",
+    "weight_reorder"
+  ],
+  "attempt_count": 4,
+  "passed_attempt_count": 4,
+  "baseline_passed_attempts": 2,
+  "treatment_passed_attempts": 2,
+  "demonstrated_skill_advantage": false,
+  "gpu_or_training_performance_evaluated": false,
+  "attempts": [
+    {
+      "attempt_id": "augmentation-baseline",
+      "case_id": "augmentation_stats",
+      "variant": "baseline",
+      "execution_mode": "fresh_delegated_host_agent_session",
+      "model_id": null,
+      "runtime_execute_used": false,
+      "passed": true,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "manifest_path": "augmentation-baseline/metadata/manifest.json",
+      "score_path": "augmentation-baseline/metadata/score.json",
+      "response_path": "augmentation-baseline/response.json",
+      "bundled_files": [
+        {
+          "path": "augmentation-baseline/TASK.md",
+          "sha256": "c3f0b7dacff23af1fde83fcc33dd64a522f786281eda5d64ab29485765df45bc"
+        },
+        {
+          "path": "augmentation-baseline/metadata/manifest.json",
+          "sha256": "784ae221e67b3f6293676bbd6e5b261dd518ca27c3bd1e28beef98d9df938496"
+        },
+        {
+          "path": "augmentation-baseline/metadata/score.json",
+          "sha256": "635c5e423891021bde73769d3e8a202d3dffbca17fe6479525f28b9a810d3764"
+        },
+        {
+          "path": "augmentation-baseline/pipeline.py",
+          "sha256": "59057a4ff41b1daedd6b74e7b5fe064dcba14e39aff14a19ed206d8932587e0f"
+        },
+        {
+          "path": "augmentation-baseline/response.json",
+          "sha256": "a0c1b7c88470bcd8bff55a7e4f0ef02c9fce081bbe5a2eb64c0f65e59d2ce728"
+        },
+        {
+          "path": "augmentation-baseline/response.schema.json",
+          "sha256": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+        },
+        {
+          "path": "augmentation-baseline/validate_cpu.py",
+          "sha256": "85fd05991aff9df5d75fe3e55fa585daab2e45af4a6f3905243950da7c6431e2"
+        }
+      ]
+    },
+    {
+      "attempt_id": "augmentation-treatment",
+      "case_id": "augmentation_stats",
+      "variant": "treatment",
+      "execution_mode": "fresh_delegated_host_agent_session",
+      "model_id": null,
+      "runtime_execute_used": false,
+      "passed": true,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "manifest_path": "augmentation-treatment/metadata/manifest.json",
+      "score_path": "augmentation-treatment/metadata/score.json",
+      "response_path": "augmentation-treatment/response.json",
+      "bundled_files": [
+        {
+          "path": "augmentation-treatment/TASK.md",
+          "sha256": "78c3b8e63da28ff24ce9fdda8be1bafb9205ef2ad5c2113c1502bec69426ada6"
+        },
+        {
+          "path": "augmentation-treatment/baseline_validation.json",
+          "sha256": "b01fa98444bffb591cbbeddc5296acc5e60662c3919dfd1c8de7bd1d99327287"
+        },
+        {
+          "path": "augmentation-treatment/candidate_validation.json",
+          "sha256": "c0e0b8810b168307ba7d312f7027d6be9b728dae6e73737d71253695e3bfb95e"
+        },
+        {
+          "path": "augmentation-treatment/experiment.json",
+          "sha256": "697e770c2707cee5180950efb8b3744ff2467d5e7a30f05e167daecb32799e30"
+        },
+        {
+          "path": "augmentation-treatment/metadata/manifest.json",
+          "sha256": "0faba1248a679bb7522df2f0391f315da7e500ce2e7a355923b6c4fa94ecbaf4"
+        },
+        {
+          "path": "augmentation-treatment/metadata/score.json",
+          "sha256": "837a4cff40fbcae4b88b34361ab4de964a853100493f1bdf6a5357d539e0705b"
+        },
+        {
+          "path": "augmentation-treatment/pipeline.py",
+          "sha256": "3f3355c9d2453becbbdfc7952108f71c16ac999bfe323cefc99a9297fc8d5b8b"
+        },
+        {
+          "path": "augmentation-treatment/repair.patch",
+          "sha256": "832761e2c8eacb3ec96f675e08cc4c499416e0a5d7974d03377dd4fae360118f"
+        },
+        {
+          "path": "augmentation-treatment/report.md",
+          "sha256": "33f7eb10f8f6e64f424e538e0608a1ab2645d171ef30dc6a8dabf54487dd873f"
+        },
+        {
+          "path": "augmentation-treatment/response.json",
+          "sha256": "a80f6754696eb45d332e220d5908190aef85ba83a1f25b21d829257d61c34637"
+        },
+        {
+          "path": "augmentation-treatment/response.schema.json",
+          "sha256": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+        },
+        {
+          "path": "augmentation-treatment/validate_normalize.py",
+          "sha256": "5cc96c53ae56f80bae9577b07f885d677b46dd79fee9d3dcd9ad7b1fe905902f"
+        }
+      ]
+    },
+    {
+      "attempt_id": "weights-baseline",
+      "case_id": "weight_reorder",
+      "variant": "baseline",
+      "execution_mode": "fresh_delegated_host_agent_session",
+      "model_id": null,
+      "runtime_execute_used": false,
+      "passed": true,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "manifest_path": "weights-baseline/metadata/manifest.json",
+      "score_path": "weights-baseline/metadata/score.json",
+      "response_path": "weights-baseline/response.json",
+      "bundled_files": [
+        {
+          "path": "weights-baseline/TASK.md",
+          "sha256": "862c32f37c34b678ef96ec3a2f4a55e41e611664cb50494db341d93672c35f87"
+        },
+        {
+          "path": "weights-baseline/metadata/manifest.json",
+          "sha256": "6e90f7f1f9ca732d78988895b59a90737bd81cc10d0e1003014569a19c3d9505"
+        },
+        {
+          "path": "weights-baseline/metadata/score.json",
+          "sha256": "2f6459edf49a779dfd3ad733861bec917c2b8985b988ddc7fc1f81811c8a8a23"
+        },
+        {
+          "path": "weights-baseline/pipeline.py",
+          "sha256": "1309c64f9fde230e580ea834317bd3fcb82a7a1d3bf5f221fcd4dfa73702fab2"
+        },
+        {
+          "path": "weights-baseline/response.json",
+          "sha256": "718a9351c002f741dd66d6ecdd867f71d7091b493fc677ffc4cfe5e05fc2a2c7"
+        },
+        {
+          "path": "weights-baseline/response.schema.json",
+          "sha256": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+        },
+        {
+          "path": "weights-baseline/test_pipeline.py",
+          "sha256": "dd4cdfbc9508044629ea085803ea158d20ccbeda17967ca227e84e98761967d2"
+        }
+      ]
+    },
+    {
+      "attempt_id": "weights-treatment",
+      "case_id": "weight_reorder",
+      "variant": "treatment",
+      "execution_mode": "fresh_delegated_host_agent_session",
+      "model_id": null,
+      "runtime_execute_used": false,
+      "passed": true,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "manifest_path": "weights-treatment/metadata/manifest.json",
+      "score_path": "weights-treatment/metadata/score.json",
+      "response_path": "weights-treatment/response.json",
+      "bundled_files": [
+        {
+          "path": "weights-treatment/TASK.md",
+          "sha256": "cbf7adb2d567b5e9531c986e2c000839cefdd424bb25f4c9c7ce02de236f45f0"
+        },
+        {
+          "path": "weights-treatment/baseline.json",
+          "sha256": "2aea7e2ed945a20d459bbcb0a4ab67ce05b7a0d8562247e0269c8ad5eb26b152"
+        },
+        {
+          "path": "weights-treatment/experiment.json",
+          "sha256": "09477831915cb0c6f7d4cefd48ec8adf800a25a1fbd5c80a8bb32dfac8625a4c"
+        },
+        {
+          "path": "weights-treatment/metadata/manifest.json",
+          "sha256": "4d0be55e86dfc21234f44648d55d44d01e624729a58a9cde9e2e0c3ce9bc3276"
+        },
+        {
+          "path": "weights-treatment/metadata/score.json",
+          "sha256": "cbd72c130ebb06c6f7b284922de74f6954d58bf8b39782c06b565a6cd0e28820"
+        },
+        {
+          "path": "weights-treatment/pipeline.before.py",
+          "sha256": "27d13fab65db71004d12482f694cbb0fa422e781a0bfd7c901fc0d5c988a8afe"
+        },
+        {
+          "path": "weights-treatment/pipeline.py",
+          "sha256": "1ab1c7f634af5cbd28e441ab931799767060af1bcc4755e397637a22d7395d34"
+        },
+        {
+          "path": "weights-treatment/projection_fixture.json",
+          "sha256": "4884b5f9c4db33b77df87601de78874329c70ad9f7c8ac524dae81e6fecbcbde"
+        },
+        {
+          "path": "weights-treatment/response.json",
+          "sha256": "01db807bb40ad0c3ced32e16b48995c9c52d791fa426cafce8c707111c15d452"
+        },
+        {
+          "path": "weights-treatment/response.schema.json",
+          "sha256": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+        },
+        {
+          "path": "weights-treatment/verification.json",
+          "sha256": "89e73aba7c43d8fbf70c943fdf6b71dc567eaf026634a43e6916b5fac84fe0fe"
+        },
+        {
+          "path": "weights-treatment/verify_conversion.py",
+          "sha256": "ac067e1b9ad38e0c1f21f354cfa7be344b55c1a734c07c1e4215d1ed671b3d24"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Only two of six suite cases were executed, one fresh agent attempt per condition for each case.",
+    "Both baseline and treatment passed; these results do not demonstrate a skill advantage.",
+    "Input and treatment skill snapshot hashes are preserved; complete agent traces and the exact full skill snapshot are not bundled.",
+    "The harness execute() runtime adapter was not used; original preparation manifests retain execution=not_run and the manual execution provenance is recorded here.",
+    "Some final release integration hardening followed the trials, so this is not an end-to-end evaluation of every final release component.",
+    "CPU synthetic artifact checks do not establish GPU speedup, production training correctness, deployment acceptance, or broad agent success rates."
+  ]
+}

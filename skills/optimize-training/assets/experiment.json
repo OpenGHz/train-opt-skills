@@ -1,0 +1,98 @@
+{
+  "experiment_schema_version": 2,
+  "artifact_type": "experiment_plan",
+  "experiment_id": "replace-with-id",
+  "status": "planned",
+  "objective": "Reduce time to validated model",
+  "comparison": {
+    "track": "system_optimization",
+    "changed_execution_settings": []
+  },
+  "measurement": {
+    "unit": null,
+    "scope": null,
+    "synchronization": null,
+    "includes_data_loading": null,
+    "includes_validation": null,
+    "includes_checkpointing": null,
+    "warmup": null,
+    "window": null,
+    "repeats": null,
+    "job_boundary": null,
+    "warmup_excluded": true
+  },
+  "invariants": {
+    "workload_id": null,
+    "dataset_id": null,
+    "model_id": null,
+    "precision": null,
+    "input_shape": null,
+    "views": null,
+    "loss": null,
+    "optimizer": null,
+    "sampling_and_augmentation": null,
+    "initial_weights": null,
+    "global_batch_size": null,
+    "hardware": null,
+    "software": null,
+    "seed": null
+  },
+  "execution": {
+    "baseline": {
+      "microbatch_size": null,
+      "gradient_accumulation_steps": null,
+      "world_size": null,
+      "data_parallel_size": null,
+      "compile": null,
+      "num_workers": null
+    },
+    "candidate": {
+      "microbatch_size": null,
+      "gradient_accumulation_steps": null,
+      "world_size": null,
+      "data_parallel_size": null,
+      "compile": null,
+      "num_workers": null
+    }
+  },
+  "provenance": {
+    "baseline": {
+      "code_revision": null,
+      "command": null
+    },
+    "candidate": {
+      "code_revision": null,
+      "command": null
+    }
+  },
+  "acceptance": {
+    "tensor_tolerances": {},
+    "quality_metric": null,
+    "quality_threshold": null,
+    "performance_target": null
+  },
+  "hypothesis": {
+    "evidence": [],
+    "bottleneck": null,
+    "predicted_effect": null
+  },
+  "correctness": {
+    "inputs": "not_run",
+    "forward": "not_run",
+    "gradients": "not_run",
+    "optimizer_update": "not_run",
+    "shard_coverage": "not_run",
+    "checkpoint_resume": "not_run",
+    "task_quality": "not_run"
+  },
+  "results": {
+    "baseline_artifact": null,
+    "candidate_artifact": null,
+    "comparison_artifact": null,
+    "memory": null,
+    "quality": null
+  },
+  "decision": "pending",
+  "rollback": null,
+  "limitations": []
+}

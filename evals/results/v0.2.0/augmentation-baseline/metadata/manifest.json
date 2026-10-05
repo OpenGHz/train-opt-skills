@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "case_id": "augmentation_stats",
+  "variant": "baseline",
+  "prepared_at": "2026-10-05T13:05:09.628789+00:00",
+  "immutable_inputs": {
+    "TASK.md": "c3f0b7dacff23af1fde83fcc33dd64a522f786281eda5d64ab29485765df45bc",
+    "response.schema.json": "6ea33d51fe2ff91071b3edd251026f3560d752e04ad1e7941ea117b5af000374"
+  },
+  "fixture_sha256": {
+    "pipeline.py": "3238930aba4ca4821399ba138103c48c4fc0fe9037a7a01d683fdabab74c892e",
+    "prompt.md": "5b2c2fc808c2c337d95a1c13bfe66d388a7dd8d9bbd64ada35e167818f9d1c17"
+  },
+  "execution": "not_run",
+  "isolation": "fixture_copy_only; not an OS sandbox"
+}
