@@ -1,8 +1,16 @@
-# Train Opt Skills
-
-[English](README.md) · [简体中文](README.zh-CN.md)
-
-**Coordinate training optimization with explicit correctness, measurement, and acceptance contracts.**
+<div align="center">
+  <img src="assets/train-opt-logo.png" width="136" alt="Train Opt Skills logo">
+  <h1>Train Opt Skills</h1>
+  <p>Optimize training with measured evidence and correctness checks.</p>
+  <p>
+    <a href="skills/optimize-training/SKILL.md"><img src="assets/badges/agent-skill.svg" alt="Agent Skill"></a>
+    <a href="docs/installation.md"><img src="assets/badges/python.svg" alt="Python 3.10 or newer"></a>
+    <a href="LICENSE"><img src="assets/badges/license.svg" alt="MIT license"></a>
+  </p>
+  <p><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a><br>
+    <a href="#quick-start">Quick start</a> · <a href="docs/tool-reference.md">Tools</a> · <a href="docs/evaluation.md">Evaluations</a>
+  </p>
+</div>
 
 `optimize-training` is a portable Agent Skill for PyTorch-focused training projects, including vision, multimodal and VLA workloads. It routes specialist diagnosis, chooses controlled experiments, and requires evidence before retaining a change. It also supports cross-framework alignment.
 

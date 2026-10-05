@@ -1,8 +1,16 @@
-# Train Opt Skills
-
-[English](README.md) · [简体中文](README.zh-CN.md)
-
-**让 Agent 在明确的正确性、测量和质量约束下，完成训练诊断、优化与验收。**
+<div align="center">
+  <img src="assets/train-opt-logo.png" width="136" alt="Train Opt Skills 项目标志">
+  <h1>Train Opt Skills</h1>
+  <p>以实测证据和正确性检查，指导 Agent 优化训练。</p>
+  <p>
+    <a href="skills/optimize-training/SKILL.md"><img src="assets/badges/agent-skill.svg" alt="Agent Skill"></a>
+    <a href="docs/installation.md"><img src="assets/badges/python.svg" alt="Python 3.10 及以上"></a>
+    <a href="LICENSE"><img src="assets/badges/license.svg" alt="MIT 许可证"></a>
+  </p>
+  <p><a href="README.md">English</a> · <strong>简体中文</strong><br>
+    <a href="#安装与使用">快速开始</a> · <a href="docs/tool-reference.md">工具说明</a> · <a href="docs/evaluation.md">技能评测</a>
+  </p>
+</div>
 
 主技能 `optimize-training` 面向以 PyTorch 为主的训练项目，覆盖视觉、多模态和 VLA，也支持跨框架对齐。它组织现有专项能力，决定该检查什么、实施什么改动，以及依据哪些证据保留或回滚。
 
